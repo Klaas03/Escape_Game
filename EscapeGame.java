@@ -16,7 +16,7 @@ public class EscapeGame extends World
     private BaseRoom CharacSelect; //onthoudt de kamers
     private BaseRoom startRoom;
     private BaseRoom room2;
-    private BaseRoom currentRoom; // huidige kamer
+    private BaseRoom currentRoom;
 
     private String[] mappen = {"CharacSelect", "StartRoom", "Room2"}; 
 
