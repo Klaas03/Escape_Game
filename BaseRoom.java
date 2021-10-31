@@ -11,7 +11,7 @@ public class BaseRoom extends World
     public static final int WIDTH = 1020;   //breedte instellen v/d rooms
     public static final int HEIGHT = 574;   //hoogte instellen v/d rooms
     public static final int RESOLUTION = 1; //resolutie instellen v/d rooms
-    private EscapeGame game;
+    protected EscapeGame game;
     
     //protected EscapeGame escapeGame;
     /**
@@ -23,12 +23,10 @@ public class BaseRoom extends World
     {    
         super(WIDTH/RESOLUTION, HEIGHT/RESOLUTION, RESOLUTION); //de grootte instellen
         this.game = game;
-        World world = new CharacSelect(this.game); 
-        Greenfoot.setWorld(world);
     }
     
-    public void act() {
-        
+    public void act(){
+        System.out.println("act in baseRoo");
     }
     
     public void NextRoom()

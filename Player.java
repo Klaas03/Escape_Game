@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.*;
 /**
  * Write a description of class Player here.
  * 
@@ -9,12 +9,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Player extends Actor
 {
     private int speed = 3; // bepaalt snelheid van de player
+
+    // players soorten
+    private ArrayList<GreenfootImage> images;
     
-    // players soorten 
-    GreenfootImage i1 = new GreenfootImage("man01.png");
-    GreenfootImage i2 = new GreenfootImage("man02.png");
-    GreenfootImage i3 = new GreenfootImage("man01.png");
-    GreenfootImage i4 = new GreenfootImage("man02.png");
+    public Player(){
+        super();
+        images = new ArrayList<GreenfootImage>();
+        images.add(new GreenfootImage("banana.png"));
+        images.add(new GreenfootImage("dog.png"));
+        images.add(new GreenfootImage("zebra.png"));
+        images.add(new GreenfootImage("flamingo.jpg"));
+    }
+    
 
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
@@ -44,19 +51,8 @@ public class Player extends Actor
             setLocation(getX(), getY() + speed);
         }
     }
-    
+
     public void changeImage(int x) {
-        if (x == 1) {
-            setImage(i1);
-        }
-        if (x == 2) {
-            setImage(i2);
-        }
-        if (x == 3) {
-            setImage(i3);
-        }
-        if (x == 4) {
-            setImage(i4);
-        }
+        setImage(images.get(x));
     }
 }

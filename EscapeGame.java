@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.*;
 
 /**
  *Deze subklasse houdt bij waar de actor zich bevindt en 
@@ -18,21 +19,25 @@ public class EscapeGame extends World
     private BaseRoom room2;
     private BaseRoom currentRoom;
 
-    private String[] mappen = {"CharacSelect", "StartRoom", "Room2"}; 
+    private ArrayList<BaseRoom> rooms;
 
     public EscapeGame()
     {    
         // Create a new world with WIDTH/RESOLUTION x HEIHT/RESOLUTION cells 
         //with a cell size of RESOLUTION x RESOLUTION pixels.
         super(WIDTH / RESOLUTION, HEIGHT / RESOLUTION, RESOLUTION); 
-
-        startRoom = new StartRoom(this);
-        //stel 'startRoom' gelijk aan 'new StartRoom(this)'
-        room2 = new Room2(this);
-        //stel 'room2' gelijk aan 'new Room2(this)'
-        SetRoom(startRoom);
+        
+        rooms = new ArrayList<BaseRoom>();
+        
+        rooms.add(new CharacSelect(this));
+        rooms.add(new StartRoom(this));
+        rooms.add(new Room2(this));
+        
+        SetRoom(rooms.get(0)); //Start in the first room
+        player = new Player();
+        
         //stel de huidige room in op startRoom
-        currentRoom.addObject(new Player(), 100, 100);
+        currentRoom.addObject(player, 100, 100);
     }
 
     private void SetRoom(BaseRoom room)
@@ -40,21 +45,29 @@ public class EscapeGame extends World
         currentRoom = room;
         Greenfoot.setWorld(room);
     }
-
+    
+    public BaseRoom getCurrentRoom(){
+        return currentRoom;
+    }
+    
+    public Player getPlayer(){
+        return player;
+    }
+    
     public void NextRoom()
     {
         if(currentRoom == startRoom)
         {
             SetRoom(room2);
             //stel de room in op room2
-            currentRoom.addObject(Globals.h, 100, 100);
+            currentRoom.addObject(player, 100, 100);
             //plaats karakter op de gewenste positie in de huidige room
         }
         else
         {
             SetRoom(startRoom);
             //stel room in op de startRoom
-            currentRoom.addObject(Globals.h, 100, 100);
+            currentRoom.addObject(player, 100, 100);
             //zet het karakter op de gewenste plaats in de huidige room
         }
     }

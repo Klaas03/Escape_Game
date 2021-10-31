@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.*;
 /**
  * Write a description of class CharacSelect here.
  * 
@@ -11,39 +11,46 @@ public class CharacSelect extends BaseRoom
     public static final int WIDTH = 1020;   //breedte instellen v/d rooms
     public static final int HEIGHT = 574;   //hoogte instellen v/d rooms
     public static final int RESOLUTION = 1; //resolutie instellen v/d rooms
-    
-    
+    private ArrayList<Actor> players;
+
     public CharacSelect(EscapeGame game)
     {         
         super(game);
-        getBackground().drawImage(new GreenfootImage("Press 1 to be image 1", 24, 
-            null, null), 300, 25);
-        getBackground().drawImage(new GreenfootImage("Press 2 to be image 2", 24, 
-            null, null), 300, 65);
-        getBackground().drawImage(new GreenfootImage("Press 3 to be image 3", 24, 
-            null, null), 300, 105);
-        getBackground().drawImage(new GreenfootImage("Press 4 to be image 4", 24, 
-            null, null), 300, 145);
-        addObject(Globals.h, 300, 255);
+        players = new ArrayList<Actor>();
+        players.add(new Actor(){});
+        players.add(new Actor(){});
+        players.add(new Actor(){});
+        players.add(new Actor(){});
+        
+        GreenfootImage banana = new GreenfootImage("banana.png");
+        GreenfootImage dog = new GreenfootImage("dog.png");
+        GreenfootImage zebra = new GreenfootImage("zebra.png");
+        GreenfootImage flamingo = new GreenfootImage("flamingo.jpg");
+        
+        banana.scale(100,100);
+        dog.scale(100,100);
+        zebra.scale(100,100);
+        flamingo.scale(100,100);
+        
+        players.get(0).setImage(banana);
+        players.get(1).setImage(dog);
+        players.get(2).setImage(zebra);
+        players.get(3).setImage(flamingo);
+
+        for(int i = 0; i < players.size(); i++){
+            this.addObject(players.get(i), 100+100*i, 100+100*i);
+        }
+
     }
-    
+
     public void act()
     {
-        if (Greenfoot.isKeyDown("1")) 
-        {
-            Globals.h.changeImage(1);
-        }
-        if (Greenfoot.isKeyDown("2")) 
-        {
-            Globals.h.changeImage(2);
-        }
-        if (Greenfoot.isKeyDown("3")) 
-        {
-            Globals.h.changeImage(3);
-        }
-        if (Greenfoot.isKeyDown("4")) 
-        {
-            Globals.h.changeImage(4);
+        if(Greenfoot.getMouseInfo().getClickCount() > 0 && Greenfoot.getMouseInfo().getButton() == 1){
+            Actor current = Greenfoot.getMouseInfo().getActor();
+            int index = players.indexOf(current);
+            if (index != -1){
+                game.getPlayer().changeImage(index);
+            }
         }
     }
 }
