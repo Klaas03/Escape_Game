@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=EscapeGame
+comment0.text=\r\nDeze\ subklasse\ houdt\ bij\ waar\ de\ actor\ zich\ bevindt\ en\ \r\nheeft\ de\ commands\ om\ de\ actor\ van\ room\ te\ laten\ veranderen\r\ndeze\ moeten\ aangeroepen\ worden\ bij\ de\ actor\ zelf\r\n
+comment1.params=
+comment1.target=EscapeGame()
+comment2.params=room
+comment2.target=void\ SetRoom(BaseRoom)
+comment3.params=
+comment3.target=void\ NextRoom()
+numComments=4
