@@ -16,10 +16,20 @@ public class Player extends Actor
     public Player(){
         super();
         images = new ArrayList<GreenfootImage>();
-        images.add(new GreenfootImage("banana.png"));
-        images.add(new GreenfootImage("dog.png"));
-        images.add(new GreenfootImage("zebra.png"));
-        images.add(new GreenfootImage("flamingo.jpg"));
+        
+        GreenfootImage banana = new GreenfootImage("banana.png");
+        GreenfootImage dog = new GreenfootImage("dog.png");
+        GreenfootImage zebra = new GreenfootImage("zebra.png");
+        GreenfootImage flamingo = new GreenfootImage("flamingo.jpg");
+        
+        images.add(banana);
+        images.add(dog);
+        images.add(zebra);
+        images.add(flamingo);
+        
+        images.forEach((image) -> image.scale(100,100));
+        
+        
     }
     
 

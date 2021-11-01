@@ -13,7 +13,7 @@ public class EscapeGame extends World
     public static final int HEIGHT = 574;   //hoogte instellen v/d rooms
     public static final int RESOLUTION = 1; //resolutie instellen v/d rooms
 
-    private Player player; 
+    private Player player;
     private BaseRoom CharacSelect; //onthoudt de kamers
     private BaseRoom startRoom;
     private BaseRoom room2;
@@ -56,19 +56,12 @@ public class EscapeGame extends World
     
     public void NextRoom()
     {
-        if(currentRoom == startRoom)
-        {
-            SetRoom(room2);
-            //stel de room in op room2
+        int index = rooms.indexOf(currentRoom);
+        if (index+1 >= rooms.size()){
+            //TODO game ended, no more rooms
+        } else {
+            SetRoom(rooms.get(index+1));
             currentRoom.addObject(player, 100, 100);
-            //plaats karakter op de gewenste positie in de huidige room
-        }
-        else
-        {
-            SetRoom(startRoom);
-            //stel room in op de startRoom
-            currentRoom.addObject(player, 100, 100);
-            //zet het karakter op de gewenste plaats in de huidige room
         }
     }
 }

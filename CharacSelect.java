@@ -45,11 +45,12 @@ public class CharacSelect extends BaseRoom
 
     public void act()
     {
-        if(Greenfoot.getMouseInfo().getClickCount() > 0 && Greenfoot.getMouseInfo().getButton() == 1){
+        if(Greenfoot.getMouseInfo() != null && Greenfoot.getMouseInfo().getClickCount() > 0 && Greenfoot.getMouseInfo().getButton() == 1){
             Actor current = Greenfoot.getMouseInfo().getActor();
             int index = players.indexOf(current);
             if (index != -1){
                 game.getPlayer().changeImage(index);
+                game.NextRoom();
             }
         }
     }

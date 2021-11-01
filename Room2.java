@@ -18,6 +18,6 @@ public class Room2 extends BaseRoom
     
     public void act()
     {
-        
+        game.NextRoom();
     }
 }
