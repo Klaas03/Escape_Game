@@ -12,7 +12,6 @@ public class StartRoom extends BaseRoom
 
     public StartRoom(EscapeGame game){
         super(game);
-        setBackground("MapTest.png");
     }
 
     public void act(){

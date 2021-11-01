@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BaseRoom extends World
 {
-    public static final int WIDTH = 1020;   //breedte instellen v/d rooms
-    public static final int HEIGHT = 574;   //hoogte instellen v/d rooms
+    public static final int WIDTH = 1280;   //breedte instellen v/d rooms
+    public static final int HEIGHT = 720;   //hoogte instellen v/d rooms
     public static final int RESOLUTION = 1; //resolutie instellen v/d rooms
     protected EscapeGame game;
     
@@ -26,11 +26,6 @@ public class BaseRoom extends World
     }
     
     public void act(){
-        System.out.println("act in baseRoo");
-    }
-    
-    public void NextRoom()
-    {
-        //escapeGame.NextRoom();
+        
     }
 }

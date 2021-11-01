@@ -38,7 +38,7 @@ public class CharacSelect extends BaseRoom
         players.get(3).setImage(flamingo);
 
         for(int i = 0; i < players.size(); i++){
-            this.addObject(players.get(i), 100+100*i, 100+100*i);
+            this.addObject(players.get(i), 400+150*i, 500);
         }
 
     }
