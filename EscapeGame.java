@@ -35,9 +35,6 @@ public class EscapeGame extends World
         
         SetRoom(rooms.get(0)); //Start in the first room
         player = new Player();
-        
-        //stel de huidige room in op startRoom
-        currentRoom.addObject(player, 100, 100);
     }
 
     private void SetRoom(BaseRoom room)
@@ -54,14 +51,14 @@ public class EscapeGame extends World
         return player;
     }
     
-    public void NextRoom()
+    public void NextRoom(int number) // set number of how many rooms you want to skip (also can be negative)
     {
         int index = rooms.indexOf(currentRoom);
-        if (index+1 >= rooms.size()){
+        if (index+number >= rooms.size()){
             //TODO game ended, no more rooms
         } else {
-            SetRoom(rooms.get(index+1));
-            currentRoom.addObject(player, 100, 100);
+            SetRoom(rooms.get(index+number));
+            currentRoom.addObject(player, 46, 336);
         }
     }
 }
