@@ -17,21 +17,22 @@ public class CharacSelect extends BaseRoom
     {         
         super(game);
         players = new ArrayList<Actor>();
+
         players.add(new Actor(){});
         players.add(new Actor(){});
         players.add(new Actor(){});
         players.add(new Actor(){});
-        
+
         GreenfootImage banana = new GreenfootImage("banana.png");
         GreenfootImage dog = new GreenfootImage("dog.png");
         GreenfootImage zebra = new GreenfootImage("zebra.png");
         GreenfootImage flamingo = new GreenfootImage("flamingo.jpg");
-        
+
         banana.scale(100,100);
         dog.scale(100,100);
         zebra.scale(100,100);
         flamingo.scale(100,100);
-        
+
         players.get(0).setImage(banana);
         players.get(1).setImage(dog);
         players.get(2).setImage(zebra);
@@ -40,7 +41,6 @@ public class CharacSelect extends BaseRoom
         for(int i = 0; i < players.size(); i++){
             this.addObject(players.get(i), 400+150*i, 500);
         }
-
     }
 
     public void act()
@@ -50,8 +50,9 @@ public class CharacSelect extends BaseRoom
             int index = players.indexOf(current);
             if (index != -1){
                 game.getPlayer().changeImage(index);
-                game.NextRoom();
+                game.NextRoom(1);
             }
         }
+
     }
 }

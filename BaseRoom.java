@@ -23,6 +23,7 @@ public class BaseRoom extends World
     {    
         super(WIDTH/RESOLUTION, HEIGHT/RESOLUTION, RESOLUTION); //de grootte instellen
         this.game = game;
+        
     }
     
     public void act(){
