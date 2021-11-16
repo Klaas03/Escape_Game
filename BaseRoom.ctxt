@@ -6,4 +6,6 @@ comment1.target=BaseRoom(EscapeGame)
 comment1.text=\r\nprotected\ is\ een\ functie\ tussen\ public\ en\ private\ zodat\ andere\ actoren\r\nbepaalde\ dingen\ kunnen\ opvragen\ maar\ niet\ alles\r\nprof\ zei\ om\ dit\ gewoon\ zonder\ teveel\ denken\ over\ te\ nemen\r\n
 comment2.params=
 comment2.target=void\ act()
-numComments=3
+comment3.params=x\ y
+comment3.target=boolean\ isWall(int,\ int)
+numComments=4

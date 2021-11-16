@@ -12,6 +12,7 @@ public class CharacSelect extends BaseRoom
     public static final int HEIGHT = 574;   //hoogte instellen v/d rooms
     public static final int RESOLUTION = 1; //resolutie instellen v/d rooms
     private ArrayList<Actor> players;
+    // test
 
     public CharacSelect(EscapeGame game)
     {         

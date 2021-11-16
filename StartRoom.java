@@ -20,8 +20,8 @@ public class StartRoom extends BaseRoom
 
         checkKey = false;
 
-        closedDoor = new Actor(){}; // two actors to open and close door
-        openDoor = new Actor(){};
+        closedDoor = (new Actor(){}); 
+        openDoor = (new Actor(){});
 
         GreenfootImage closedDoorafb = new GreenfootImage("closedDoor.png");
         GreenfootImage openDoorafb = new GreenfootImage("openDoor.png");
@@ -32,7 +32,7 @@ public class StartRoom extends BaseRoom
         this.addObject(closedDoor, 953, 351);
 
         Wizzard wizzard = new Wizzard();
-        this.addObject(wizzard, 100, 500);
+        this.addObject(wizzard, 233, 600);
 
     }
 
