@@ -37,7 +37,7 @@ public class StartRoom extends BaseRoom
     }
 
     public void act(){
-        changeDoor();
+        changeDoor(); 
     }
 
     public boolean checkDoor() {
@@ -50,5 +50,4 @@ public class StartRoom extends BaseRoom
             this.addObject(openDoor, 953, 351);
         }
     }
-
 }
