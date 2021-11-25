@@ -14,6 +14,7 @@ public class StartRoom extends BaseRoom
     private Actor closedDoor;
     private Actor openDoor;
     private boolean checkKey;
+    private Wizzard wizzard;
 
     public StartRoom(EscapeGame game){
         super(game);
@@ -31,13 +32,16 @@ public class StartRoom extends BaseRoom
 
         this.addObject(closedDoor, 953, 351);
 
-        Wizzard wizzard = new Wizzard();
+        wizzard = new Wizzard();
         this.addObject(wizzard, 233, 600);
 
     }
 
     public void act(){
-        changeDoor(); 
+        changeDoor();
+        if (wizzard.isTouching()){
+            game.NextRoom(1);
+        }
     }
 
     public boolean checkDoor() {

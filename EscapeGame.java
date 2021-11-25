@@ -18,7 +18,8 @@ public class EscapeGame extends World
     private BaseRoom startRoom;
     private BaseRoom room2;
     private BaseRoom currentRoom;
-
+    
+   
     private ArrayList<BaseRoom> rooms;
 
     public EscapeGame()
@@ -31,10 +32,11 @@ public class EscapeGame extends World
         
         rooms.add(new CharacSelect(this));
         rooms.add(new StartRoom(this));
+        rooms.add(new game1(this));
         rooms.add(new Room2(this));
         
         SetRoom(rooms.get(0)); //Start in the first room
-        player = new Player();
+        player = new Player(this);
     }
 
     private void SetRoom(BaseRoom room)

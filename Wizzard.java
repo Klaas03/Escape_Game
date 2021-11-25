@@ -14,8 +14,13 @@ public class Wizzard extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        isTouching();
     }
     
-    
+    public boolean isTouching(){
+        if (isTouching(Player.class)){
+            return true;
+        }
+        return false;
+    }
 }

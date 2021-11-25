@@ -11,18 +11,18 @@ public class CharacSelect extends BaseRoom
     public static final int WIDTH = 1020;   //breedte instellen v/d rooms
     public static final int HEIGHT = 574;   //hoogte instellen v/d rooms
     public static final int RESOLUTION = 1; //resolutie instellen v/d rooms
-    private ArrayList<Actor> players;
+    private ArrayList<Player> players;
     // test
 
     public CharacSelect(EscapeGame game)
     {         
         super(game);
-        players = new ArrayList<Actor>();
+        players = new ArrayList<Player>();
 
-        players.add(new Actor(){});
-        players.add(new Actor(){});
-        players.add(new Actor(){});
-        players.add(new Actor(){});
+        players.add(new Player(game){});
+        players.add(new Player(game){});
+        players.add(new Player(game){});
+        players.add(new Player(game){});
 
         GreenfootImage banana = new GreenfootImage("banana.png");
         GreenfootImage dog = new GreenfootImage("dog.png");
@@ -54,6 +54,5 @@ public class CharacSelect extends BaseRoom
                 game.NextRoom(1);
             }
         }
-
     }
 }
