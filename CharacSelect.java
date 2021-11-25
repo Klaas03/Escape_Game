@@ -19,10 +19,10 @@ public class CharacSelect extends BaseRoom
         super(game);
         players = new ArrayList<Player>();
 
-        players.add(new Player(game){});
-        players.add(new Player(game){});
-        players.add(new Player(game){});
-        players.add(new Player(game){});
+        players.add(new Player(game));
+        players.add(new Player(game));
+        players.add(new Player(game));
+        players.add(new Player(game));
 
         GreenfootImage banana = new GreenfootImage("banana.png");
         GreenfootImage dog = new GreenfootImage("dog.png");
@@ -51,7 +51,7 @@ public class CharacSelect extends BaseRoom
             int index = players.indexOf(current);
             if (index != -1){
                 game.getPlayer().changeImage(index);
-                game.NextRoom(1);
+                game.NextRoom(1, 100, 400);
             }
         }
     }

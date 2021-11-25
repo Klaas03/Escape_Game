@@ -8,9 +8,9 @@ import java.util.*;
  */
 public class Player extends Actor
 {
-    private int speed = 3; // bepaalt snelheid van de player
-
     // players soorten
+    int Speed = 3;
+    int speedBack = -3;
     private ArrayList<GreenfootImage> images;
 
     public Player(EscapeGame game)
@@ -28,7 +28,7 @@ public class Player extends Actor
         images.add(zebra);
         images.add(flamingo);
 
-        images.forEach((image) -> image.scale(100,100));
+        images.forEach((image) -> image.scale(50,50));
     }
 
     /**
@@ -37,7 +37,8 @@ public class Player extends Actor
      */
     public void act()
     {
-        move();
+        move(Speed);
+        WallEncounter();
     }
 
     /*
@@ -45,36 +46,38 @@ public class Player extends Actor
      * d naar recht, s naar onder, q naar links
      */
 
-    public void move() 
+    public void move(int speed) 
     {
-        if(getOneIntersectingObject(Border.class) == null)
+        if (Greenfoot.isKeyDown("q")) 
         {
-            if (Greenfoot.isKeyDown("q")) 
-            {
-                setLocation(getX() - speed, getY());
-            }
-            if (Greenfoot.isKeyDown("z"))
-            {
-                setLocation(getX(), getY() - speed);
-            }
-            if (Greenfoot.isKeyDown("d"))
-            {
-                setLocation(getX() + speed, getY());
-            }
-            if (Greenfoot.isKeyDown("s"))
-            {
-                setLocation(getX(), getY() + speed);
-            }
+            setLocation(getX() - speed, getY());
         }
-        else
+        if (Greenfoot.isKeyDown("z"))
         {
-            setLocation(640, 360);
+            setLocation(getX(), getY() - speed);
         }
-
+        if (Greenfoot.isKeyDown("d"))
+        {
+            setLocation(getX() + speed, getY());
+        }
+        if (Greenfoot.isKeyDown("s"))
+        {
+            setLocation(getX(), getY() + speed);
+        }
     }
 
     public void changeImage(int x) 
     {
         setImage(images.get(x));
+    }
+
+    public void WallEncounter(){
+        if (isTouching(Border.class)){
+            move(speedBack);
+        }
+    }
+
+    public Actor getIntersecting(){
+        return getOneIntersectingObject(MyActor.class);
     }
 }

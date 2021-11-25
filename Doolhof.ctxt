@@ -1,7 +1,16 @@
 #BlueJ class context
 comment0.target=Doolhof
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Doolhof\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=game
-comment1.target=Doolhof(EscapeGame)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Doolhof.\r\n\ \r\n
-numComments=2
+comment1.params=game\ player
+comment1.target=Doolhof(EscapeGame,\ Player)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ CheckTouchingRedButton()
+comment4.params=
+comment4.target=void\ CheckTouchingFutureDoor()
+comment5.params=
+comment5.target=void\ CheckTouchingKey()
+comment6.params=
+comment6.target=void\ CheckTouchingExit()
+numComments=7

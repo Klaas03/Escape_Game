@@ -14,9 +14,6 @@ public class EscapeGame extends World
     public static final int RESOLUTION = 1; //resolutie instellen v/d rooms
 
     private Player player;
-    private BaseRoom CharacSelect; //onthoudt de kamers
-    private BaseRoom startRoom;
-    private BaseRoom room2;
     private BaseRoom currentRoom;
     
    
@@ -30,13 +27,15 @@ public class EscapeGame extends World
         
         rooms = new ArrayList<BaseRoom>();
         
+        player = new Player(this);
+        
         rooms.add(new CharacSelect(this));
         rooms.add(new StartRoom(this));
+        rooms.add(new Doolhof(this, player));
         rooms.add(new game1(this));
         rooms.add(new Room2(this));
         
         SetRoom(rooms.get(0)); //Start in the first room
-        player = new Player(this);
     }
 
     private void SetRoom(BaseRoom room)
@@ -53,14 +52,14 @@ public class EscapeGame extends World
         return player;
     }
     
-    public void NextRoom(int number) // set number of how many rooms you want to skip (also can be negative)
+    public void NextRoom(int number, int xCoor, int yCoor) // set number of how many rooms you want to skip (also can be negative)
     {
         int index = rooms.indexOf(currentRoom);
         if (index+number >= rooms.size()){
             //TODO game ended, no more rooms
         } else {
             SetRoom(rooms.get(index+number));
-            currentRoom.addObject(player, 46, 336);
+            currentRoom.addObject(player, xCoor, yCoor);
         }
     }
 }

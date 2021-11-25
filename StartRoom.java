@@ -11,8 +11,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class StartRoom extends BaseRoom
 {
     private int count = 0;
-    private Actor closedDoor;
-    private Actor openDoor;
+    private MyActor closedDoor;
+    private MyActor openDoor;
     private boolean checkKey;
     private Wizzard wizzard;
 
@@ -21,8 +21,8 @@ public class StartRoom extends BaseRoom
 
         checkKey = false;
 
-        closedDoor = (new Actor(){}); 
-        openDoor = (new Actor(){});
+        closedDoor = (new MyActor()); 
+        openDoor = (new MyActor());
 
         GreenfootImage closedDoorafb = new GreenfootImage("closedDoor.png");
         GreenfootImage openDoorafb = new GreenfootImage("openDoor.png");
@@ -40,7 +40,7 @@ public class StartRoom extends BaseRoom
     public void act(){
         changeDoor();
         if (wizzard.isTouching()){
-            game.NextRoom(1);
+            game.NextRoom(1, 50, 558);
         }
     }
 
