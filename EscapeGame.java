@@ -29,11 +29,13 @@ public class EscapeGame extends World
         
         player = new Player(this);
         
+        
         rooms.add(new CharacSelect(this));
-        rooms.add(new StartRoom(this));
+        rooms.add(new Room2(this, player));
         rooms.add(new Doolhof(this, player));
-        rooms.add(new game1(this));
-        rooms.add(new Room2(this));
+        rooms.add(new Scene(this, player));
+        rooms.add(new FinalRoom(this, player));
+        rooms.add(new Shooter(this, player));
         
         SetRoom(rooms.get(0)); //Start in the first room
     }
@@ -57,7 +59,8 @@ public class EscapeGame extends World
         int index = rooms.indexOf(currentRoom);
         if (index+number >= rooms.size()){
             //TODO game ended, no more rooms
-        } else {
+        } 
+        else {
             SetRoom(rooms.get(index+number));
             currentRoom.addObject(player, xCoor, yCoor);
         }

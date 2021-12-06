@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Pc
+comment1.params=x\ y\ spe
+comment1.target=Pc(int,\ int,\ int)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=boolean\ atTurningPoint()
+comment3.text=\r\n\ Test\ if\ we\ are\ at\ one\ of\ the\ turning\ points.\r\n
+numComments=4

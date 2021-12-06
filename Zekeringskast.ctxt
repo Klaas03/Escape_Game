@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Zekeringskast
+comment1.params=
+comment1.target=Zekeringskast()
+comment2.params=flip
+comment2.target=Zekeringskast(boolean)
+comment3.params=
+comment3.target=void\ act()
+numComments=4

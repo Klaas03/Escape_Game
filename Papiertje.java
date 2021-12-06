@@ -14,6 +14,6 @@ public class Papiertje extends Props
      */
     public void act()
     {
-        // Add your action code here.
+        
     }
 }

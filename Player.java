@@ -71,13 +71,20 @@ public class Player extends Actor
         setImage(images.get(x));
     }
 
-    public void WallEncounter(){
-        if (isTouching(Border.class)){
+    public void WallEncounter()
+    {
+        if (isTouching(Border.class)||isTouching(propzekering.class))
+        {
             move(speedBack);
         }
     }
 
-    public Actor getIntersecting(){
+    public Actor getIntersecting()
+    {
         return getOneIntersectingObject(MyActor.class);
+    }
+    
+    public GreenfootImage getImagePlayer(){
+        return getImage();
     }
 }

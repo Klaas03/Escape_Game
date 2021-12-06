@@ -16,4 +16,20 @@ public class Props extends Actor
     {
         // Add your action code here.
     }
+
+    public void interact()
+    {
+        /*Greenfoot.Actor Player;
+        Player = getObjectsInRange(10, Player.class);
+        bool keyPress;
+        if(Greenfoot.isKeyDown("e"))
+        {
+            keyPress = true;
+        }
+        if(Player &&  keyPress!= null)
+        {
+
+        }*/
+    }
+    
 }

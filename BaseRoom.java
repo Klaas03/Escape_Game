@@ -33,9 +33,4 @@ public class BaseRoom extends World
     public World getEscapeGame(){
         return game;
     }
-    
-    public boolean isWall(int x, int y) {
-        Color col = game.getColorAt(x, y);
-        return col.getGreen() > (col.getRed() * 2);
-    }
 }

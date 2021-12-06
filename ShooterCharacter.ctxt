@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=ShooterCharacter
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ ShooterCharacter\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=ShooterCharacter()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=speed
+comment3.target=void\ move(int)
+comment3.text=\r\n\ besturing\:\ z\ naar\ boven\r\n\ d\ naar\ recht,\ s\ naar\ onder,\ q\ naar\ links\r\n
+comment4.params=
+comment4.target=void\ TrackMouse()
+comment5.params=
+comment5.target=void\ processShot()
+comment6.params=laser
+comment6.target=void\ shoot(Laser)
+numComments=7

@@ -8,6 +8,4 @@ comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=greenfoot.World\ getEscapeGame()
-comment4.params=x\ y
-comment4.target=boolean\ isWall(int,\ int)
-numComments=5
+numComments=4

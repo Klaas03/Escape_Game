@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Shooter
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Shooter\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=game\ player
+comment1.target=Shooter(EscapeGame,\ Player)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ showTime()
+comment4.params=
+comment4.target=void\ countTime()
+comment5.params=points
+comment5.target=void\ addScore(int)
+comment6.params=
+comment6.target=void\ showScore()
+numComments=7

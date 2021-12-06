@@ -1,8 +1,12 @@
 #BlueJ class context
 comment0.target=Room2
 comment0.text=\r\n\ Kamer\ 2\r\n\ \r\n\ @author\ Groep8\ \r\n\ @version\ (28/10)\r\n
-comment1.params=game
-comment1.target=Room2(EscapeGame)
+comment1.params=game\ player
+comment1.target=Room2(EscapeGame,\ Player)
 comment2.params=
 comment2.target=void\ act()
-numComments=3
+comment3.params=
+comment3.target=void\ checkForMaze()
+comment4.params=
+comment4.target=void\ CheckTouchingExit()
+numComments=5

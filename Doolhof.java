@@ -23,7 +23,8 @@ public class Doolhof extends BaseRoom
         player1 = player;
         
         RedButton = new MyActor();
-        GreenfootImage RedButtonAfb = new GreenfootImage("maxresdefault.jpg");
+        GreenfootImage RedButtonAfb = new GreenfootImage("RedButton.png");
+        RedButtonAfb.scale(70, 70);
         RedButton.setImage(RedButtonAfb); 
         addObject(RedButton, 550, 150); 
         
@@ -98,12 +99,14 @@ public class Doolhof extends BaseRoom
                 
         FutureDoor = new MyActor();
         GreenfootImage FutureDoorAfb = new GreenfootImage("FutureDoor.jpg");
+        FutureDoorAfb.scale(70, 70);
         FutureDoorAfb.scale(150, 120);
         FutureDoor.setImage(FutureDoorAfb); 
         addObject(FutureDoor, 150, 450);
         
         Sleutel = new MyActor();
         GreenfootImage SleutelAfb = new GreenfootImage("sleutel.jpg");
+        SleutelAfb.scale(70,  70);
         Sleutel.setImage(SleutelAfb); 
         addObject(Sleutel, 350, 350); 
     }
@@ -148,7 +151,7 @@ public class Doolhof extends BaseRoom
     
     public void CheckTouchingExit(){
         if (player1.getIntersecting() == DeurOpen){
-            game.NextRoom(1, 50, 50);
+            game.NextRoom(-1, 100, 400);
         }
     }
 }
